@@ -1,0 +1,28 @@
+<nav class="navbar navbar-dark navbar-expand-lg bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand text-primary" routerLink="/home">Random Car Rental Company</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/contact">Cars</a>
+          </li>
+          <li>
+            <button class="btn btn-success" (click)="increaseDonatedAmount()">Donate!</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+</nav>
+<ng-template [ngIf]="donatedAmount < 200" [ngIfElse]="VIPreached">
+  <div class="bg-white text-black text-center p-2">
+    <p>VIP Status not reached yet. Donate more than 100$</p>
+  </div>
+</ng-template>
+<ng-template #VIPreached>
+  <div class="bg-success text-black text-center p-2">
+    <p>VIP Status reached! You donated more than 100$</p>
+  </div>
+</ng-template>
